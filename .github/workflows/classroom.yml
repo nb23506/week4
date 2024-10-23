@@ -152,8 +152,8 @@ jobs:
         test-name: advnegative
         setup-command: ''
         command: gcc -o ahw4-1 ahw4-1.c  &&./ahw4-1
-        input: "-1"
-        expected-output: "-1 is a negative number"
+        input: "-20"
+        expected-output: "-20 is a negative number"
         comparison-method: contains
         timeout: 10
         max-score: 3
@@ -176,11 +176,23 @@ jobs:
         test-name: advmaxval
         setup-command: ''
         command: gcc -o ahw4-2 ahw4-2.c  &&./ahw4-2
-        input: 10 20 30
-        expected-output: Max is 30
+        input: -10 -20 -3
+        expected-output: Max is -3
         comparison-method: contains
         timeout: 10
-        max-score: 10
+        max-score: 5
+    - name: advmaxval2
+      id: advmaxval2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: advmaxval2
+        setup-command: ''
+        command: gcc -o ahw4-2 ahw4-2.c  &&./ahw4-2
+        input: 22 28 10
+        expected-output: Max is 28
+        comparison-method: contains
+        timeout: 10
+        max-score: 5
     - name: advquadratic
       id: advquadratic
       uses: classroom-resources/autograding-io-grader@v1
@@ -188,11 +200,13 @@ jobs:
         test-name: advquadratic
         setup-command: ''
         command: gcc -o ahw4-3 ahw4-3.c -lm &&./ahw4-3
-        input: 1 3 2
-        expected-output: "-1 -2"
+        input: -1 -2 9
+        expected-output: |
+          -4.162278 
+          2.162278
         comparison-method: contains
         timeout: 10
-        max-score: 5
+        max-score: 3
     - name: advquadratic2
       id: advquadratic2
       uses: classroom-resources/autograding-io-grader@v1
@@ -200,11 +214,23 @@ jobs:
         test-name: advquadratic2
         setup-command: ''
         command: gcc -o ahw4-3 ahw4-3.c -lm &&./ahw4-3
-        input: 0 3 2
-        expected-output: "0.666667"
+        input: 0 1 2
+        expected-output: "-2.000000"
         comparison-method: contains
         timeout: 10
-        max-score: 5
+        max-score: 3
+    - name: advquadratic3
+      id: advquadratic3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: advquadratic3
+        setup-command: ''
+        command: gcc -o ahw4-3 ahw4-3.c -lm &&./ahw4-3
+        input: 0 3 2
+        expected-output: "The real solution does not exist"
+        comparison-method: contains
+        timeout: 10
+        max-score: 4
     - name: meal1
       id: meal1
       uses: classroom-resources/autograding-io-grader@v1
@@ -240,7 +266,7 @@ jobs:
         test-name: meal3
         setup-command: ''
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
-        input: Height? 160 Weight? 55
+        input: Height? 158 Weight? 48.5
         expected-output: |
           Ideal weight = 54.920799
           Go for it
@@ -251,18 +277,25 @@ jobs:
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
         AVERAGE_RESULTS: "${{steps.average.outputs.result}}"
+        AVERAGE2_RESULTS: "${{steps.average2.outputs.result}}"
         POSITIVE_RESULTS: "${{steps.positive.outputs.result}}"
         NEGATIVE_RESULTS: "${{steps.negative.outputs.result}}"
         ENTROPY_RESULTS: "${{steps.entropy.outputs.result}}"
+        ENTROPY2_RESULTS: "${{steps.entropy2.outputs.result}}"
+        ENTROPY3_RESULTS: "${{steps.entropy3.outputs.result}}"
         LARGER_RESULTS: "${{steps.larger.outputs.result}}"
+        LARGER2_RESULTS: "${{steps.larger2.outputs.result}}"
+        LARGER3_RESULTS: "${{steps.larger3.outputs.result}}"
         ADVPOSITIVE_RESULTS: "${{steps.advpositive.outputs.result}}"
         ADVNEGATIVE_RESULTS: "${{steps.advnegative.outputs.result}}"
         ADVNZERO_RESULTS: "${{steps.advnzero.outputs.result}}"
         ADVMAXVAL_RESULTS: "${{steps.advmaxval.outputs.result}}"
+        ADVMAXVAL2_RESULTS: "${{steps.advmaxval2.outputs.result}}"
         ADVQUADRATIC_RESULTS: "${{steps.advquadratic.outputs.result}}"
         ADVQUADRATIC2_RESULTS: "${{steps.advquadratic2.outputs.result}}"
+        ADVQUADRATIC3_RESULTS: "${{steps.advquadratic3.outputs.result}}"
         MEAL1_RESULTS: "${{steps.meal1.outputs.result}}"
         MEAL2_RESULTS: "${{steps.meal2.outputs.result}}"
         MEAL3_RESULTS: "${{steps.meal3.outputs.result}}"
       with:
-        runners: average,positive,negative,entropy,larger,advpositive,advnegative,advnzero,advmaxval,advquadratic,advquadratic2,meal1,meal2,meal3
+        runners: average,average2,positive,negative,entropy,entropy2,entropy3,larger,larger2,larger3,advpositive,advnegative,advnzero,advmaxval,advmaxval2,advquadratic,advquadratic2,advquadratic3,meal1,meal2,meal3
