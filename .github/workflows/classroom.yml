@@ -242,7 +242,7 @@ jobs:
         test-name: meal1
         setup-command: ''
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
-        input: 165 65
+        input: Height? 165 Weight? 65
         expected-output: |
           Ideal weight = 59.895000
           Let's reduce sweets
@@ -256,7 +256,7 @@ jobs:
         test-name: meal2
         setup-command: ''
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
-        input: 180 69
+        input: Height? 180 Weight? 69
         expected-output: |
           Ideal weight = 71.279999 
           Go for it
@@ -270,7 +270,7 @@ jobs:
         test-name: meal3
         setup-command: ''
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
-        input: 158 48.5
+        input: Height? 158 Weight? 48.5
         expected-output: |
           Ideal weight = 54.920799 
           Eat some more
