@@ -5,7 +5,7 @@ int main() {
     double p, q, entropy;
 
     // Input probability p for team A winning_
-    printf("P?\n");
+    printf("P? ");
     scanf("%lf", &p);
 
     // Check if the input is valid
