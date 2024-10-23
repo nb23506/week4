@@ -4,9 +4,9 @@ int main() {
     float height, weight, ideal_weight;
 
     // Input user's height and weight
-    //printf("Height? ");
+    printf("Height? \n");
     scanf("%f", &height);
-    //printf("Weight? ");
+    printf("Weight? \n");
     scanf("%f", &weight);
 
     // Calculate the ideal weight using the formula height * height * 22 / 10000
