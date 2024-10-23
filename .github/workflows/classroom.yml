@@ -244,7 +244,7 @@ jobs:
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
         input: 165 65
         expected-output: |
-          Ideal weight = 59.85000
+          Ideal weight = 59.895000
           Let's reduce sweets
         comparison-method: contains
         timeout: 10
@@ -256,10 +256,10 @@ jobs:
         test-name: meal2
         setup-command: ''
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
-        input: 160 51
+        input: 180 69
         expected-output: |
-          Ideal weight = 71.279999
-          Eat some more
+          Ideal weight = 71.279999 
+          Go for it
         comparison-method: contains
         timeout: 10
         max-score: 3
@@ -272,8 +272,8 @@ jobs:
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
         input: Height? 158 Weight? 48.5
         expected-output: |
-          Ideal weight = 54.920799
-          Go for it
+          Ideal weight = 54.920799 
+          Eat some more
         comparison-method: contains
         timeout: 10
         max-score: 4
