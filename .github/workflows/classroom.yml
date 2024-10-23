@@ -202,9 +202,8 @@ jobs:
         command: gcc -o ahw4-3 ahw4-3.c -lm &&./ahw4-3
         input: -1 -2 9
         expected-output: |
-          a=-1.000000 b=-2.000000 c=9.000000
-          -4.162278 
-          2.162278
+          Input is a=-1.000000 b=-2.000000 c=9.000000:
+          Output should be -4.162278 and 2.162278
         comparison-method: contains
         timeout: 10
         max-score: 3
