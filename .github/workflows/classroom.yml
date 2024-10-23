@@ -20,11 +20,23 @@ jobs:
         test-name: average
         setup-command: ''
         command: gcc -o hw4-1 hw4-1.c && ./hw4-1
-        input: 10 20 40
-        expected-output: Average is 23
+        input: -10 -10 -20
+        expected-output: Average is -13
         comparison-method: contains
         timeout: 10
-        max-score: 10
+        max-score: 5
+    - name: average2
+      id: average2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: average2
+        setup-command: ''
+        command: gcc -o hw4-1 hw4-1.c && ./hw4-1
+        input: 56 19 24
+        expected-output: Average is 33
+        comparison-method: contains
+        timeout: 10
+        max-score: 5
     - name: positive
       id: positive
       uses: classroom-resources/autograding-io-grader@v1
@@ -32,7 +44,7 @@ jobs:
         test-name: positive
         setup-command: ''
         command: gcc -o hw4-2 hw4-2.c && ./hw4-2
-        input: '1'
+        input: '20'
         expected-output: Positive
         comparison-method: contains
         timeout: 10
@@ -44,7 +56,7 @@ jobs:
         test-name: negative
         setup-command: ''
         command: gcc -o hw4-2 hw4-2.c && ./hw4-2
-        input: "-2"
+        input: "-20"
         expected-output: Negative or zero
         comparison-method: contains
         timeout: 10
@@ -56,11 +68,35 @@ jobs:
         test-name: entropy
         setup-command: ''
         command: gcc -o hw4-3 hw4-3.c -lm && ./hw4-3
-        input: '0.7'
+        input: '0.3'
         expected-output: '0.881291'
         comparison-method: contains
         timeout: 10
-        max-score: 10
+        max-score: 3
+    - name: entropy2
+      id: entropy2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: entropy2
+        setup-command: ''
+        command: gcc -o hw4-3 hw4-3.c -lm && ./hw4-3
+        input: '0.878'
+        expected-output: '0.535083'
+        comparison-method: contains
+        timeout: 10
+        max-score: 3
+    - name: entropy3
+      id: entropy3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: entropy3
+        setup-command: ''
+        command: gcc -o hw4-3 hw4-3.c -lm && ./hw4-3
+        input: '0.1'
+        expected-output: '0.0.468996'
+        comparison-method: contains
+        timeout: 10
+        max-score: 4
     - name: larger
       id: larger
       uses: classroom-resources/autograding-io-grader@v1
@@ -68,11 +104,35 @@ jobs:
         test-name: larger
         setup-command: ''
         command: gcc -o hw4-4 hw4-4.c  &&./hw4-4
-        input: 10 100
-        expected-output: '100'
+        input: 10 20
+        expected-output: '20'
         comparison-method: contains
         timeout: 10
-        max-score: 10
+        max-score: 3
+    - name: larger2
+      id: larger2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: larger2
+        setup-command: ''
+        command: gcc -o hw4-4 hw4-4.c  &&./hw4-4
+        input: -10 -15
+        expected-output: '-10'
+        comparison-method: contains
+        timeout: 10
+        max-score: 3
+    - name: larger3
+      id: larger3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: larger3
+        setup-command: ''
+        command: gcc -o hw4-4 hw4-4.c  &&./hw4-4
+        input: 453 126
+        expected-output: '453'
+        comparison-method: contains
+        timeout: 10
+        max-score: 4
     - name: advpositive
       id: advpositive
       uses: classroom-resources/autograding-io-grader@v1
@@ -152,8 +212,10 @@ jobs:
         test-name: meal1
         setup-command: ''
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
-        input: 160 100
-        expected-output: Let's reduce sweets
+        input: 165 65
+        expected-output: |
+          Ideal weight = 59.85000
+          Let's reduce sweets
         comparison-method: contains
         timeout: 10
         max-score: 3
@@ -165,7 +227,9 @@ jobs:
         setup-command: ''
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
         input: 160 51
-        expected-output: Eat some more
+        expected-output: |
+          Ideal weight = 71.279999
+          Eat some more
         comparison-method: contains
         timeout: 10
         max-score: 3
@@ -177,7 +241,9 @@ jobs:
         setup-command: ''
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
         input: Height? 160 Weight? 55
-        expected-output: Go for it
+        expected-output: |
+          Ideal weight = 54.920799
+          Go for it
         comparison-method: contains
         timeout: 10
         max-score: 4
