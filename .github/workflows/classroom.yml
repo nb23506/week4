@@ -197,4 +197,4 @@ jobs:
         MEAL2_RESULTS: "${{steps.meal2.outputs.result}}"
         MEAL3_RESULTS: "${{steps.meal3.outputs.result}}"
       with:
-        runners: average,positive,negative,entropy,larger,advpositive,advnegative,advmaxval,advquadratic,advquadratic2,meal1,meal2,meal3,advnzero
+        runners: average,positive,negative,entropy,larger,advpositive,advnegative,advnzero,advmaxval,advquadratic,advquadratic2,meal1,meal2,meal3
