@@ -22,17 +22,17 @@ void solve_quadratic(int a, int b, int c) {
     int d = b * b - 4 * a * c;
 
     if (d < 0) {
-        printf("The real solution does not exist.\n");
+        printf("The real solution does not exist\n");
     } else if (d == 0) {
         // One real solution
         float solution = (float)-b / (2 * a); // Cast to float for accurate division
-        printf("%.2f\n", solution);
+        printf("%.3f\n", solution);
     } else {
         // Two real solutions
-        float sqrt_d = sqrt(d);
-        float solution1 = (float)(-b + sqrt_d) / (2 * a);
-        float solution2 = (float)(-b - sqrt_d) / (2 * a);
-        printf("%.2f %.2f\n", solution1, solution2);
+        int sqrt_d = sqrt(d);
+        int solution1 = (int)(-b + sqrt_d) / (2 * a);
+        int solution2 = (int)(-b - sqrt_d) / (2 * a);
+        printf("%d %d\n", solution1, solution2);
     }
 }
 
