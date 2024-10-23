@@ -13,7 +13,7 @@ int main() {
     } else if (number < 0) {
         printf("%d is a negative number\n", number);
     } else {
-        printf("%d is zero\n", number);
+        printf("You entered zero\n", number);
     }
 
     return 0;
