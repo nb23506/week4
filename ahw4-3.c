@@ -7,7 +7,7 @@ void solve_quadratic(int a, int b, int c) {
         if (b != 0) {
             // Solve as a linear equation bx + c = 0
             float solution = (float)-c / b; // Cast to float for accurate division
-            printf("%.2f\n", solution);
+            printf("%.6f\n", solution);
         } else {
             if (c != 0) {
                 printf("No solution exists (b = 0, c ≠ 0).\n");
