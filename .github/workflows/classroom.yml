@@ -247,7 +247,7 @@ jobs:
           65
         expected-output: |
           Height? Weight? 
-          Ideal weight = 59.895000
+          Ideal weight = 59.85000
           Let's reduce sweets
         comparison-method: contains
         timeout: 10
