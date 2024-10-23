@@ -11,7 +11,7 @@ int main() {
     if (number > 0) {
         printf("Positive");
     } else if (number < 0) {
-        printf("Negative");
+        printf("Negative or zero");
     } else {
         printf("Negative or zero\n");
     }
