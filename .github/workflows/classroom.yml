@@ -56,7 +56,7 @@ jobs:
         test-name: negative
         setup-command: ''
         command: gcc -o hw4-2 hw4-2.c && ./hw4-2
-        input: "-20"
+        input: '-20'
         expected-output: Negative or zero
         comparison-method: contains
         timeout: 10
@@ -140,7 +140,7 @@ jobs:
         test-name: advpositive
         setup-command: ''
         command: gcc -o ahw4-1 ahw4-1.c  &&./ahw4-1
-        input: '10 '
+        input: '10'
         expected-output: 10 is a positive number
         comparison-method: contains
         timeout: 10
@@ -242,9 +242,7 @@ jobs:
         test-name: meal1
         setup-command: ''
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
-        input: |
-          165
-          65
+        input: 165 65
         expected-output: |
           Height? Weight? 
           Ideal weight = 59.895000
