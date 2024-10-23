@@ -32,7 +32,7 @@ void solve_quadratic(float a, float b, float c) {
         float sqrt_d = sqrt(d);
         float solution1 = (float)(-b + sqrt_d) / (2 * a);
         float solution2 = (float)(-b - sqrt_d) / (2 * a);
-        printf("%.6f %d\n", solution1, solution2);
+        printf("%.6f\n", solution1, solution2);
     }
 }
 
