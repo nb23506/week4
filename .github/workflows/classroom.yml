@@ -84,7 +84,7 @@ jobs:
         expected-output: 10 is a positive number
         comparison-method: contains
         timeout: 10
-        max-score: 10
+        max-score: 3
     - name: advnegative
       id: advnegative
       uses: classroom-resources/autograding-io-grader@v1
@@ -96,7 +96,7 @@ jobs:
         expected-output: "-1 is a negative number"
         comparison-method: contains
         timeout: 10
-        max-score: 10
+        max-score: 3
     - name: advnzero
       id: advnzero
       uses: classroom-resources/autograding-io-grader@v1
@@ -108,7 +108,7 @@ jobs:
         expected-output: "You entered zero"
         comparison-method: contains
         timeout: 10
-        max-score: 10
+        max-score: 4
     - name: advmaxval
       id: advmaxval
       uses: classroom-resources/autograding-io-grader@v1
@@ -132,7 +132,19 @@ jobs:
         expected-output: "-1 -2"
         comparison-method: contains
         timeout: 10
-        max-score: 10
+        max-score: 5
+    - name: advquadratic2
+      id: advquadratic2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: advquadratic
+        setup-command: ''
+        command: gcc -o ahw4-3 ahw4-3.c -lm &&./ahw4-3
+        input: 0 3 2
+        expected-output: "0.666667"
+        comparison-method: contains
+        timeout: 10
+        max-score: 5
     - name: meal1
       id: meal1
       uses: classroom-resources/autograding-io-grader@v1
