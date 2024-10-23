@@ -244,7 +244,7 @@ jobs:
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
         input: 165 65
         expected-output: |
-          Ideal weight = 59.895000
+          Height? Weight? Ideal weight = 59.895000
           Let's reduce sweets
         comparison-method: contains
         timeout: 10
