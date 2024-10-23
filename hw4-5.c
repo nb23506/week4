@@ -14,6 +14,7 @@ int main() {
 
     // Compare input weight with ideal weight and give advice
     if (weight > ideal_weight + 5) {
+        printf("Ideal weight = %.6f \n", ideal_weight);
         printf("Let's reduce sweets\n");
     } else if (weight < ideal_weight - 5) {
         printf("Eat some more\n");
