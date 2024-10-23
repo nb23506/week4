@@ -215,7 +215,9 @@ jobs:
         setup-command: ''
         command: gcc -o ahw4-3 ahw4-3.c -lm &&./ahw4-3
         input: 0 1 2
-        expected-output: "-2.000000"
+        expected-output: |
+          Input is a=0.000000 b=1.000000 c=2.000000:
+          Output should be -2.000000
         comparison-method: contains
         timeout: 10
         max-score: 3
@@ -226,8 +228,10 @@ jobs:
         test-name: advquadratic3
         setup-command: ''
         command: gcc -o ahw4-3 ahw4-3.c -lm &&./ahw4-3
-        input: 0 3 2
-        expected-output: "The real solution does not exist"
+        input: 8 24 25
+        expected-output: |
+          Input is a=8.000000 b=24.000000 c=25.000000:
+          The real solution does not exist
         comparison-method: contains
         timeout: 10
         max-score: 4
