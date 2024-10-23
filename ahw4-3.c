@@ -1,51 +1,24 @@
 #include <stdio.h>
 #include <math.h>
 
-void solve_quadratic(float a, float b, float c) {
-    // Check if a is 0_
+int main(void){
+  double a, b, c, d;
+  printf("a? ");  scanf("%lf", &a);
+  printf("b? ");  scanf("%lf", &b);
+  printf("c? ");  scanf("%lf", &c);
+  printf("Input is a=%lf b=%lf c=%lf:\n", a, b, c);
+  d = b*b - 4*a*c;
+  if (a!= 0 && d > 0){
+    printf("Output should be ");
+    printf("%f and ", (-b + sqrt(d))/(2*a));
+    printf("%f\n", (-b - sqrt(d))/(2*a));
+  } else {
     if (a == 0) {
-        if (b != 0) {
-            // Solve as a linear equation bx + c = 0
-            float solution = (float)-c / b; // Cast to float for accurate division
-            printf("%.6f\n", solution);
-        } else {
-            if (c != 0) {
-                printf("No solution exists (b = 0, c ≠ 0).\n");
-            } else {
-                printf("Infinite solutions exist (b = 0, c = 0).\n");
-            }
-        }
-        return;
+      printf("Output should be %f\n", (-c/b));
     }
+    if (d < 0){
+      printf("The real solution does not exist\n");
+    }  
+  }
 
-    // Calculate the discriminant
-    float d = b * b - 4 * a * c;
-
-    if (d < 0) {
-        printf("The real solution does not exist\n");
-    } else if (d == 0) {
-        // One real solution
-        float solution = (float)-b / (2 * a); // Cast to float for accurate division
-        printf("%.3f\n", solution);
-    } else {
-        // Two real solutions
-        float sqrt_d = sqrt(d);
-        float solution1 = (float)(-b + sqrt_d) / (2 * a);
-        float solution2 = (float)(-b - sqrt_d) / (2 * a);
-        printf("%.6f\n", solution1, solution2);
-    }
-}
-
-int main() {
-    int a, b, c;
-    //printf("Enter coefficient a: ");
-    scanf("%d", &a);
-    //printf("Enter coefficient b: ");
-    scanf("%d", &b);
-    //printf("Enter coefficient c: ");
-    scanf("%d", &c);
-
-    solve_quadratic(a, b, c);
-
-    return 0;
-}
+  return 0;
