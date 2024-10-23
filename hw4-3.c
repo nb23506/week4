@@ -22,7 +22,7 @@ int main() {
     entropy = - (p * (log(p) / log(2)) + q * (log(q) / log(2)));
 
     // Output the calculated entropy
-    printf("%.2f\n", entropy);
+    printf("%.6f\n", entropy);
 
     return 0;
 }
