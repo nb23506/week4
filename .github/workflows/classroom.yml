@@ -93,7 +93,7 @@ jobs:
         setup-command: ''
         command: gcc -o hw4-3 hw4-3.c -lm && ./hw4-3
         input: '0.1'
-        expected-output: '0.0.468996'
+        expected-output: '0.468996'
         comparison-method: contains
         timeout: 10
         max-score: 4
