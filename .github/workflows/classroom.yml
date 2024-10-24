@@ -242,9 +242,9 @@ jobs:
         test-name: meal1
         setup-command: ''
         command: gcc -o hw4-5 hw4-5.c  && ./hw4-5
-        input: Height? 165 Weight? 65
+        input: 165  65
         expected-output: |
-          Height? Weight? Ideal weight = 59.895000
+          Ideal weight = 59.895000
           Let's reduce sweets
         comparison-method: contains
         timeout: 10
